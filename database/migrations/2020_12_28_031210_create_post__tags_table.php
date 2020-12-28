@@ -15,11 +15,11 @@ class CreatePostTagsTable extends Migration
     {
         Schema::create('post__tags', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('post_id', false);
-            $table->unsignedBigInteger('tag_id', false);
+            $table->unsignedBigInteger('posts_id', false);
+            $table->unsignedBigInteger('tags_id', false);
             // Foreign key
-            $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->foreign('posts_id')->references('id')->on('posts');
+            $table->foreign('tags_id')->references('id')->on('tags');
 
             $table->timestamps();
         });
