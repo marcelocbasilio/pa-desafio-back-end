@@ -33,7 +33,7 @@ class PostController extends Controller
      */
     public function index(): JsonResponsePost
     {
-        $posts = $this->post->paginate('10');
+        $posts = $this->post->with('tags')->paginate('10');
         return response()->json($posts, 200);
     }
 
@@ -44,10 +44,9 @@ class PostController extends Controller
     public function show(int $id): JsonResponsePost
     {
         try {
-            //$posts = $this->post->findOrFail($id);
-            $posts = $this->post()->tags()->with('tags')->findOrFail($id);
+            $post = $this->post->with('tags')->findOrFail($id);
             return response()->json([
-                'data' => $posts
+                'data' => $post
             ], 200);
         } catch (Exception $e) {
             $message = new ApiMessages($e->getMessage());
@@ -87,9 +86,10 @@ class PostController extends Controller
     public function update(Request $request): JsonResponsePost
     {
         $data = $request->all();
-        $post = $this->post->find($data['id']);
+
         try {
-            $post = $post->update($data);
+            $post = $this->post->findOrFail($data['id']);
+            $post->update($data);
 
             if (isset($data['tags']) && count($data['tags'])) {
                 $post->tags()->sync($data['tags']);
