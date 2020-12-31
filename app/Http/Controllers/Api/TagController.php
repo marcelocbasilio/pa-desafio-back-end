@@ -8,6 +8,7 @@ use App\Tags;
 use Exception;
 use Illuminate\Http\JsonResponse as JsonResponseTag;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 /**
  * Class TagController
