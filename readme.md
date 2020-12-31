@@ -1,5 +1,16 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## Sobre a API
 
+- Criar o banco de dados com o nome que quiser, não esquecendo de atualizar o arquivo
+.env com os dados do seu banco.
+- Após preencher o arquivo .env, excutar o comando no terminal: php artisan migrate (para 
+  poder criar as tabelas no banco).
+- Rodar o comando php artisan serve (para levantar o servidor built-in do Laravel).
+- Qualquer dúvida sobre rotas executar o comando php artisan route:list (para ver as rotas
+  pelo Laravel).
+- Documentação da API ([Clique Aqui](https://documenter.getpostman.com/view/5138304/TVt1AQpD))
+- Github do projeto ([Clique Aqui](https://github.com/marcelocbasilio/pa-desafio-back-end))
+
+<br>
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
